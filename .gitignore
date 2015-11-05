@@ -12,6 +12,6 @@
 *~
 logs
 node_modules
+app/bower_components
 target
 /bin/
-typings/
