@@ -1,0 +1,17 @@
+.DS_Store
+.classpath
+.idea
+.project
+.settings
+*.iml
+*.ipr
+*.iws
+*.log
+*.swp
+*.rdb
+*~
+logs
+node_modules
+app/bower_components
+target
+/bin/
