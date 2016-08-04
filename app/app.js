@@ -6,7 +6,8 @@ angular.module('jointJSApp', [
     'ngRoute',
     'jointJSApp.stencil',
     'jointJSApp.validator',
-    'jointJSApp.inlineEdit'
+    'jointJSApp.inlineEdit',
+    'jointJSApp.graphToSVG'
 ]).
 config(['$routeProvider', function ($routeProvider) {
     $routeProvider.otherwise({redirectTo: '/stencil'});

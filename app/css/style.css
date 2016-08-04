@@ -1135,3 +1135,14 @@ footer .copyright {
     width: 20px;
     margin-right: 10px;
 }
+.navigator-container {
+   position: absolute;
+   height: 120px;   /* toolbar height */
+   right: 0;
+   bottom: 20px; /* statusbar height */
+   width: 240px;
+}
+.navigator-container {
+   border: 1px solid hsla(220,11%,97%,.95);;
+   border-left-color: lightgray;
+}
