@@ -91,9 +91,9 @@ var stencil = function() {
     });
     /* [END] TEST object / components */
     
-    stencil.load([r, c, link3, arrow1], 'simple');
-    stencil.load([t], 'text');
-    stencil.load([p, i], 'advanced');
+    stencil.loadGroup([r, c], 'simple');
+    stencil.loadGroup([t], 'text');
+    stencil.loadGroup([p, i], 'advanced');
     
     graph.on('add', function(cell) {
         console.log('A cell with id', cell.id, 'was just added to the paper.');

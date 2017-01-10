@@ -1,0 +1,6 @@
+.paper {
+   display: inline-block;
+   border: 1px solid gray;
+   margin-left: -1px;
+   position: relative;
+}
