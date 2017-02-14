@@ -1,6 +1,14 @@
-.paper {
+.joint-paper {
    display: inline-block;
-   border: 1px solid gray;
+   border: 1px solid red;
    margin-left: -1px;
    position: relative;
+}
+
+.joint-paper-scroller .joint-paper {
+   background-color: #00BFFF;
+}
+
+.joint-paper-scroller > .paper-scroller-background {
+   background-color: #5652DB;
 }

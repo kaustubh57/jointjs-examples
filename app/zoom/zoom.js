@@ -20,24 +20,50 @@ var zoom = function() {
 
         var graph = new joint.dia.Graph;
         var paper = new joint.dia.Paper({
-            el: $('#paper-holder-create-zoom'),
-            width: 400,
+            width: 300,
             height: 300,
-            gridSize: 1,
             model: graph
         });
+
+        var paperScroller = new joint.ui.PaperScroller({
+            autoResizePaper: false,
+            paper: paper
+        });
+        paperScroller.$el.css({
+            width: 300,
+            height: 300
+        });
+
+        $('#paper-holder-create-zoom').append(paperScroller.render().el);
 
         var r = new joint.shapes.basic.Rect({ 
             position: { x: 50, y: 50 }, size: { width: 70, height: 40 },
             attrs: { rect: { fill: '#2ECC71' }, text: { text: 'rect', fill: 'black' } }
         });
 
-        var c = new joint.shapes.basic.Circle({ 
-            position: { x: 220, y: 170 }, size: { width: 80, height: 40 },
-            attrs: { circle: { fill: '#9B59B6' }, text: { text: 'circle', fill: 'white' } }
+        graph.addCells([r]);
+
+        $('#zoom-in').on('click', function() {
+            var cells = graph.getElements();
+            for (var cellIndex = 0; cellIndex < cells.length; cellIndex++) {
+                var cell =  cells[cellIndex];
+                var cellSize = cell.get('size');
+                cell.resize(cellSize.width*1.2, cellSize.height*1.2);
+            }
         });
 
-        graph.addCells([r, c]);
+        $('#zoom-out').on('click', function() {
+            var cells = graph.getElements();
+            for (var cellIndex = 0; cellIndex < cells.length; cellIndex++) {
+                var cell =  cells[cellIndex];
+                var cellSize = cell.get('size');
+                cell.resize(cellSize.width*0.8, cellSize.height*0.8);
+            }
+        });
+
+        $('#btn-center').on('click', function() {
+            paperScroller.center();
+        });
 
     }());
 };
