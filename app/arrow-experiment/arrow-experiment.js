@@ -14,6 +14,21 @@ angular.module('jointJSApp.arrowExperiment', ['ngRoute'])
     arrowExperiment();
 }]);
 
+// Custom link view
+joint.shapes.basic.ArrowLinkView = joint.dia.LinkView.extend({
+
+    addVertex: function(vertex) {
+        console.log("******** Custom vertex add method... START ********");
+        var vertices = (this.model.get('vertices') || []).slice();
+        console.log("Vertex count >>> " + vertices.length);
+        if (vertices.length >= 1) {
+            return;
+        }
+        joint.shapes.basic.ArrowLinkView.__super__.addVertex.apply(this, arguments);
+        console.log("******** Custom vertex add method... END ********");
+    }
+});
+
 var arrowExperiment = function() {
     var graph = new joint.dia.Graph;
     var paper = new joint.dia.Paper({
@@ -21,7 +36,8 @@ var arrowExperiment = function() {
         width: 400,
         height: 300,
         gridSize: 1,
-        model: graph
+        model: graph,
+        linkView: joint.shapes.basic.ArrowLinkView
     });
 
     paper.on('cell:pointerup', function(cellView) {
