@@ -8,7 +8,8 @@ angular.module('jointJSApp', [
     'jointJSApp.validator',
     'jointJSApp.inlineEdit',
     'jointJSApp.graphToSVG',
-    'jointJSApp.zoom'
+    'jointJSApp.zoom',
+    'jointJSApp.arrowExperiment'
 ]).
 config(['$routeProvider', function ($routeProvider) {
     $routeProvider.otherwise({redirectTo: '/stencil'});

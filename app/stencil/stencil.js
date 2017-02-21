@@ -18,7 +18,7 @@ var stencil = function() {
     var graph = new joint.dia.Graph;
     var paper = new joint.dia.Paper({
         el: $('#paper-holder-groups'),
-        width: 300,
+        width: 800,
         height: 300,
         gridSize: 1,
         model: graph

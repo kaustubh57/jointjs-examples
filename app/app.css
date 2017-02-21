@@ -28,3 +28,12 @@
     content: "";
     padding: 0;
 }
+
+.margin-left-20 {
+    margin-left: 20px;
+}
+
+#graph-json {
+    width: 600px;
+    border: #000000 solid 1px;
+}
